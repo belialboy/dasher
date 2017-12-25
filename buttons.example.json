@@ -1,0 +1,88 @@
+{
+    "buttons":[
+        {
+            "mac": "44:65:0d:f7:13:8c",
+            "name" : "SimpleHuman",
+            "action": "socoabs.toggle",
+            "payload": null
+        },
+        {
+            "mac": "50:f5:da:15:d8:37",
+            "name" : "Fairy",
+            "action": "socoabs.toggle",
+            "payload": null
+        },
+        {
+            "mac": "ac:63:be:ff:36:b2",
+            "name" : "Finish",
+            "action": "socoabs.toggle",
+            "payload": null
+        },
+        {
+            "mac": "ac:63:be:42:f3:4f",
+            "name" : "Biona",
+            "action": "socoabs.toggle",
+            "payload": null
+        },
+        {
+            "mac": "ac:63:be:27:5b:f2",
+            "name" : "Whiskers",
+            "action": "socoabs.toggle",
+            "payload": null
+        },
+        {
+            "mac": "a6:2b:b0:ac:b3:51",
+            "name" : "Ariel",
+            "action": "socoabs.playGoogleMusic",
+            "payload": {
+                "category": "stations",
+                "term": "easy listening"
+             
+            }
+        },
+        {
+            "mac": "50:f5:da:86:e4:91",
+            "name" : "Durex",
+            "action": "socoabs.playMp3Radio",
+            "payload": {
+                "uri": "x-rincon-mp3radio://media-the.musicradio.com:80/HeartColchesterMP3",
+                "title": "Heart FM"
+            }
+        },
+        {
+            "mac": "a6:2b:b0:e3:b5:cf",
+            "name" : "Dad's Root Beer",
+            "action": "nestabs.toggle",
+            "payload": {
+                "location": "Paris"
+            }
+        },
+        {
+            "mac": "50:c7:bf:0a:a6:c6:00",
+            "name" : "TP Link Router",
+            "action": "none.none",
+            "payload": null
+        },
+        {
+            "mac": "00:e0:91:da:83:34",
+            "name" : "Lounge TV",
+            "action": "none.none",
+            "payload": null
+        },
+        {
+            "mac": "70:9e:29:36:df:0c",
+            "name" : "Playstation 4",
+            "action": "none.none",
+            "payload": null
+        }
+    ],
+    "maker":{
+        "key":"Webhooks Key",
+        "action":"dash_button"
+    },
+    "nestabs":{
+        "id":"Client Id",
+        "secret":"Client Secret"
+    },
+    "sonosabs": null
+}
