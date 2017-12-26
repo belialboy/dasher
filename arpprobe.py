@@ -51,16 +51,17 @@ def arp_display(pkt):
             result = getattr(nestInstance, function)(button['payload'])
         else:
             print("Module "+module+" not found")
-    if result is not None and result is not "waiting":
+            
+    if result is not None and result is not "waiting" and "maker" in config:
         url = "https://maker.ifttt.com/trigger/" + config['maker']['action'] + "/with/key/" + config['maker']['key']
         requests.post(url, data={'value1': button['name'], 'value2': result})
 
-def sniff_arpprobe(interface,scan):
+def sniff_arpprobe(config_file):
     try:
         ## load in the button config
         print ("Loading Button Config")
         global config
-        config = json.load(open('buttons.json'))
+        config = json.load(open(config_file))
         ## build out the helper instances
         print ("Building Sonos Instance")
         global sonosInstance
@@ -72,37 +73,30 @@ def sniff_arpprobe(interface,scan):
         
         global macs
         macs = dict()
-        if scan == "all":
-            sniff(
-    ##            iface=interface,
-                prn=arp_display, 
-                filter="arp or (udp and portrange 68)",
-                store=0)
-        elif scan == "udp":
-            sniff(
-    ##            iface=interface,
-                prn=arp_display, 
-                filter="udp and portrange 68",
-                store=0)
-        elif scan == "arp":
-            sniff(
-    ##            iface=interface,
-                prn=arp_display, 
-                filter="arp",
-                store=0)
+        
+        if config['scan']['type'] == "udp":
+            filter_text = "udp and portrange 68"
+        elif config['scan']['type'] == "arp":
+            filter_text = "arp"
         else:
-            exit()
+            filter_text = "arp or (udp and portrange 68)"
+            
+        
+        
+        sniff(
+            iface=config['scan']['interface'],
+            prn=arp_display, 
+            filter=filter_text,
+            store=0)
+        
     except KeyboardInterrupt:
         pass
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-i', '--interface', type=str, dest='interface', default='wlan0',
-                        help='Network interface to use')
-    parser.add_argument('-s', '--scan', type=str, dest='scan', default='all',
-                        help='Scan type (all, arp, udp)')
+    parser.add_argument('-c', '--config', type=str, dest='config_file', default='buttons.json',
+                        help='Location of the button config file')                
     args = parser.parse_args()
- 
-    sniff_arpprobe(args.interface,args.scan)
+    sniff_arpprobe(args.config_file)
 

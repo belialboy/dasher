@@ -1,37 +1,37 @@
 {
     "buttons":[
         {
-            "mac": "44:65:0d:f7:13:8c",
+            "mac": "44:65:0d:f7:13:ff",
             "name" : "SimpleHuman",
             "action": "socoabs.toggle",
             "payload": null
         },
         {
-            "mac": "50:f5:da:15:d8:37",
+            "mac": "50:f5:da:15:d8:ff",
             "name" : "Fairy",
             "action": "socoabs.toggle",
             "payload": null
         },
         {
-            "mac": "ac:63:be:ff:36:b2",
+            "mac": "ac:63:be:ff:36:ff",
             "name" : "Finish",
             "action": "socoabs.toggle",
             "payload": null
         },
         {
-            "mac": "ac:63:be:42:f3:4f",
+            "mac": "ac:63:be:42:f3:ff",
             "name" : "Biona",
             "action": "socoabs.toggle",
             "payload": null
         },
         {
-            "mac": "ac:63:be:27:5b:f2",
+            "mac": "ac:63:be:27:5b:ff",
             "name" : "Whiskers",
             "action": "socoabs.toggle",
             "payload": null
         },
         {
-            "mac": "a6:2b:b0:ac:b3:51",
+            "mac": "a6:2b:b0:ac:b3:ff",
             "name" : "Ariel",
             "action": "socoabs.playGoogleMusic",
             "payload": {
@@ -41,7 +41,7 @@
             }
         },
         {
-            "mac": "50:f5:da:86:e4:91",
+            "mac": "50:f5:da:86:e4:ff",
             "name" : "Durex",
             "action": "socoabs.playMp3Radio",
             "payload": {
@@ -50,7 +50,7 @@
             }
         },
         {
-            "mac": "a6:2b:b0:e3:b5:cf",
+            "mac": "a6:2b:b0:e3:b5:ff",
             "name" : "Dad's Root Beer",
             "action": "nestabs.toggle",
             "payload": {
@@ -58,31 +58,35 @@
             }
         },
         {
-            "mac": "50:c7:bf:0a:a6:c6:00",
+            "mac": "50:c7:bf:0a:a6:ff",
             "name" : "TP Link Router",
             "action": "none.none",
             "payload": null
         },
         {
-            "mac": "00:e0:91:da:83:34",
+            "mac": "00:e0:91:da:83:ff",
             "name" : "Lounge TV",
             "action": "none.none",
             "payload": null
         },
         {
-            "mac": "70:9e:29:36:df:0c",
+            "mac": "70:9e:29:36:df:ff",
             "name" : "Playstation 4",
             "action": "none.none",
             "payload": null
         }
     ],
     "maker":{
-        "key":"Webhooks Key",
+        "key":"Put your Webhooks key here",
         "action":"dash_button"
     },
     "nestabs":{
-        "id":"Client Id",
+        "id":"Client ID",
         "secret":"Client Secret"
     },
-    "sonosabs": null
+    "sonosabs": null,
+    "scan":{
+        "type": "udp", 
+        "interface": null
+    }
 }
